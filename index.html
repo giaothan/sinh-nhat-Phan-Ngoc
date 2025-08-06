@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Cake Animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffcfe0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      font-family: 'Comic Sans MS', cursive;
+    }
+
+    .cake {
+      position: relative;
+      width: 200px;
+      height: 120px;
+      background: #7b3f00;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 10px 0 #5c2c00;
+      animation: drop 1s ease-out forwards;
+      transform: translateY(-300px);
+    }
+
+    .icing {
+      position: absolute;
+      top: -40px;
+      width: 100%;
+      height: 50px;
+      background: #fff8dc;
+      border-radius: 50% 50% 0 0;
+      z-index: 2;
+    }
+
+    .candle {
+      position: absolute;
+      top: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 40px;
+      background: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 -15px 0 #ff69b4 inset;
+      z-index: 3;
+    }
+
+    .flame {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      background: orange;
+      border-radius: 50%;
+      box-shadow: 0 0 15px yellow;
+      animation: flicker 0.2s infinite;
+    }
+
+    .text {
+      margin-top: 30px;
+      font-size: 28px;
+      color: #a62c43;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; transform: translateX(-50%) scale(1); }
+      50% { opacity: 0.6; transform: translateX(-50%) scale(1.1); }
+      100% { opacity: 1; transform: translateX(-50%) scale(1); }
+    }
+
+    @keyframes drop {
+      to {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cake">
+    <div class="icing"></div>
+    <div class="candle">
+      <div class="flame"></div>
+    </div>
+  </div>
+  <div class="text">happy birthday ThanhNgoc <3 </div>
+</body>
+</html>
